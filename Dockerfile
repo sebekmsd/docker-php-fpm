@@ -15,6 +15,8 @@ RUN sed -i 's/listen = \/run\/php\/php7.2-fpm.sock/listen = 9000/g' /etc/php/7.2
 
 RUN apt-get install -y --allow-unauthenticated php7.2-pgsql 
 
+RUN apt-get install -y supervisor
+
 RUN echo "php_flag[display_errors] = on" >> /etc/php/7.2/fpm/pool.d/www.conf ; \
     curl -sS https://getcomposer.org/installer -o composer-setup.php ; \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer 

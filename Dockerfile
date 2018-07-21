@@ -21,5 +21,9 @@ RUN echo "php_flag[display_errors] = on" >> /etc/php/7.2/fpm/pool.d/www.conf ; \
 
 EXPOSE 9000
 
+RUN mkdir /app
+
+WORKDIR app
+
 CMD php-fpm7.2 -y /etc/php/7.2/fpm/php-fpm.conf --pid /etc/php/7.2/fpm/php-fpm.pid -F
 

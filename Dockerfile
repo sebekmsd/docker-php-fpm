@@ -21,6 +21,9 @@ RUN echo "php_flag[display_errors] = on" >> /etc/php/7.2/fpm/pool.d/www.conf ; \
     curl -sS https://getcomposer.org/installer -o composer-setup.php ; \
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer 
 
+RUN apt-get update ;\ 
+   apt-get install -y --allow-unauthenticated php7.2-ldap
+
 EXPOSE 9000
 
 RUN mkdir /app
